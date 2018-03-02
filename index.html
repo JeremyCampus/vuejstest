@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js</title>
+    <link rel="stylesheet" href="design.css">
+    
+</head>
+<body>
+  
+    
+<div id="app1" class="app">
+        <label for="message">A modifier : </label>
+        <input id="message" type="text" v-model="message" />
+        <h1>{{ message }}</h1>
+
+
+</div>
+      
+<div id="app2" class="app">
+        <button @click="whenReady = name">
+                Toggle Panel
+        </button>
+        <input id="name" type="text" v-model.lazy="name" />
+        <p>{{ whenReady }}</p>
+</div>
+
+<div id="app3" class="app">
+        <button @click="active = !active" :aria-pressed="active ? 'true' : 'false'">Toggle me</button>
+        <p :class="{ red: active }">Sometimes I need to be styled differently</p>
+</div>
+
+
+<div id="app4" class="app">
+        <button @click="show = !show" :aria-expanded="show ? 'true' : 'false'">
+          Toggle Panel
+        </button>
+        <img @click="show = !show" :aria-expanded="show ? 'true' : 'false'" v-if="show" src="img/jedi.jpg" alt="Smiley face" height="500px">
+</div>
+
+</body>
+</html>
+
+
+
+<script src="vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script src="script.js"></script>
+
+
